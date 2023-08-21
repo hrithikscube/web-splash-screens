@@ -8,7 +8,7 @@ const ResetPassword = () => {
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 w-full h-screen">
       <div className="flex flex-col w-full p-10 justify-start items-center">
-        <div className="lg:w-[400px]">
+        <div className="lg:w-[400px] md:w-[400px] w-full">
           <Heading title="Password reset" />
 
           <div className="flex flex-col w-full lg:mt-10 mt-5 gap-4">

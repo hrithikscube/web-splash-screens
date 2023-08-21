@@ -21,7 +21,7 @@ const CreateAccount = () => {
               <Button variant="contained">Create account</Button>
             </Link>
             <p className="text-sm grayShade">
-              Already have an account.
+              Already have an account?
               <Link to="/login">
                 <span className="text-black hover:underline cursor-pointer">
                   {' '}

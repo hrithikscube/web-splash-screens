@@ -50,7 +50,7 @@ const WelcomeBack = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center relative">
+      <div className="w-full lg:flex hidden flex-col justify-center items-center relative">
         <img
           src="bgTwo.png"
           alt="bgTwo"

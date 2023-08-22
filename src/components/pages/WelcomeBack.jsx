@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Heading from '../common/Heading'
 import Input from '../common/Input'
 import Button from '../common/Button'
 import { Link } from 'react-router-dom'
 
 const WelcomeBack = () => {
+  const [show, setShow] = useState(false)
+  const toggleShowPassword = () => {
+    setShow(!show)
+  }
+
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 w-full h-screen">
       <div className="flex flex-col w-full p-10 justify-center items-center">
@@ -13,7 +18,28 @@ const WelcomeBack = () => {
 
           <div className="flex flex-col w-full lg:mt-10 mt-5 gap-4">
             <Input name="email" placeholder="Email" type="text" />
-            <Input name="password" placeholder="Password" type="password" />
+            <div className="relative">
+              <Input
+                name="password"
+                placeholder="Password"
+                type={show ? 'text' : 'password'}
+              />
+              {show ? (
+                <img
+                  onClick={toggleShowPassword}
+                  src="/view.svg"
+                  alt="view password"
+                  className="w-[22px] h-[22px] absolute top-5 right-3 cursor-pointer"
+                />
+              ) : (
+                <img
+                  onClick={toggleShowPassword}
+                  src="/hide.svg"
+                  alt="hide password"
+                  className="w-[22px] h-[22px] absolute top-5 right-3 cursor-pointer"
+                />
+              )}
+            </div>
             <Link to="/forgot-password">
               <p className="text-sm cursor-pointer hover:underline text-end">
                 Forgot password?
